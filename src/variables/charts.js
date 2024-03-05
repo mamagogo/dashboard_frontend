@@ -104,7 +104,7 @@ export const barChartOptionsDailyTraffic = {
 
 export const pieChartOptions = {
   labels: ["Your files", "System", "Empty"],
-  colors: ["#4318FF", "#6AD2FF", "#EFF4FB"],
+  colors: ["#4318FF", "#6AD2FF","#8800ff",'#ff0000', "#EFF4FB"],
   chart: {
     width: "50px",
   },
@@ -133,7 +133,7 @@ export const pieChartOptions = {
     },
   },
   fill: {
-    colors: ["#4318FF", "#6AD2FF", "#EFF4FB"],
+    colors: ["#4318FF", "#6AD2FF" ,"#8800ff",'#ff0000',"#EFF4FB"],
   },
   tooltip: {
     enabled: true,
