@@ -2,18 +2,37 @@
 body {
   background-color: rgba(211, 211, 211, 0.158);
 }
+
 .dashboard {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  .chart-container {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-  }
-  
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.dashboard2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.dashboard2 .chart-container {
+  display: flex;
+  justify-content: center;
+  height: 500px;
+  overflow-y: scroll;
+}
+.dashboard3 .chart-container {
+  max-width: 95vw;
+  max-height: 90vh;
+  overflow-x: scroll;
+}
+
+.chart-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
