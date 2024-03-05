@@ -30,7 +30,7 @@ function App() {
 
   useEffect(() => {
     handleFetchAnalytics();
-  },[]);
+  }, []);
   return (
     <div className="dashboard">
       <div className="chart-container">
@@ -38,7 +38,7 @@ function App() {
       </div>
 
       <div className="chart-container">
-        <PieChart options={pieChartOptions} series={pieChartData} />
+        <PieChart options={{...pieChartOptions,labels:}} series={analytics?.relevance?.map(item => item?.count)} />
       </div>
 
       <div className="chart-container">
@@ -49,16 +49,39 @@ function App() {
       </div>
 
       <div className="chart-container">
-        <LineChart
-          options={lineChartOptionsTotalSpent}
-          series={lineChartDataTotalSpent}
+      <LineChart
+          options={{...lineChartOptionsTotalSpent,xaxis:{...lineChartOptionsTotalSpent.xaxis,categories:analytics?.year?.map(item=>item.label)}}}
+          series={[
+            // {
+            //   name: "Revenue",
+            //   data: [50, 64, 48, 66, 49, 68],
+            //   color: "#4318FF",
+            // },
+            {
+              name: "Profit",
+              data: analytics?.year?.map(item=>item.count),
+              color: "#6AD2FF",
+            }
+          ]}
         />
       </div>
 
       <div className="chart-container">
-        <BarChart
-          chartData={barChartDataDailyTraffic}
-          chartOptions={barChartOptionsDailyTraffic}
+        
+        <LineChart
+          options={{...lineChartOptionsTotalSpent,xaxis:{...lineChartOptionsTotalSpent.xaxis,categories:analytics?.intensity?.map(item=>item.label)}}}
+          series={[
+            // {
+            //   name: "Revenue",
+            //   data: [50, 64, 48, 66, 49, 68],
+            //   color: "#4318FF",
+            // },
+            {
+              name: "Profit",
+              data: analytics?.intensity?.map(item=>item.count),
+              color: "#6AD2FF",
+            }
+          ]}
         />
       </div>
 
